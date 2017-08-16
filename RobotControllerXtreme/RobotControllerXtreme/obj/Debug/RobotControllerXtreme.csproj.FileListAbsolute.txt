@@ -7,3 +7,5 @@ c:\users\mono\documents\visual studio 2015\Projects\RobotControllerXtreme\RobotC
 c:\users\mono\documents\visual studio 2015\Projects\RobotControllerXtreme\RobotControllerXtreme\obj\Debug\RobotControllerXtreme.csproj.GenerateResource.Cache
 c:\users\mono\documents\visual studio 2015\Projects\RobotControllerXtreme\RobotControllerXtreme\obj\Debug\RobotControllerXtreme.exe
 c:\users\mono\documents\visual studio 2015\Projects\RobotControllerXtreme\RobotControllerXtreme\obj\Debug\RobotControllerXtreme.pdb
+C:\Users\Mono\documents\visual studio 2015\Projects\RobotControllerXtreme\RobotControllerXtreme\bin\Debug\M2Mqtt.Net.dll
+C:\Users\Mono\documents\visual studio 2015\Projects\RobotControllerXtreme\RobotControllerXtreme\bin\Debug\M2Mqtt.Net.pdb
