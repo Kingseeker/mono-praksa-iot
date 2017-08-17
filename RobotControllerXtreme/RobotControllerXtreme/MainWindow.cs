@@ -18,17 +18,28 @@ namespace RobotControllerXtreme
         public delegate void SerialPortCallback(Control control, string text);
         public delegate void MQTTCallback(Control control, string text);
 
+        public void ConnectToCOMPort()
+        {
+            string comPort = RobotHelper.GetComPort();
+            if (comPort != "")
+            {
+                port = new SerialPort(comPort, 9600, Parity.None, 8, StopBits.One);
+                port.Open();
+                port.DataReceived += SerialDataHandler;
+                MessageBox.Show("Connected to serial " + comPort);
+            }
+
+            else
+                MessageBox.Show("Not connected to serial port");
+        } 
+
         public MainWindow()
         {           
             InitializeComponent();
 
-            //port = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
-            //port.Open();
-            //port.DataReceived += SerialDataHandler;
+            ConnectToCOMPort();
 
-            //HostIP = IPAddress.Parse(connectionString);
-            clientSub = new MqttClient(hostName);
-            //clientSub = new MqttClient(HostIP);
+            clientSub = new MqttClient(hostName);           
             clientSub.MqttMsgPublishReceived += new MqttClient.MqttMsgPublishEventHandler(EventPublished);
         }
 
@@ -62,6 +73,11 @@ namespace RobotControllerXtreme
         {
             SendCommand(new byte[] { 0x04 });
             //SendCommand(4);           
+        }
+
+        private void COMConnectButton_Click(object sender, EventArgs e)
+        {
+            ConnectToCOMPort();
         }
 
         private void SendCommand(byte[] commands)
@@ -178,7 +194,7 @@ namespace RobotControllerXtreme
             }
         }
 
-     
+       
     }
 }
        
