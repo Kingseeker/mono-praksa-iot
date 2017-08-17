@@ -1,41 +1,36 @@
-<!doctype html>
-<html ng-app="roboController">
-<head>
-    <title>Controller</title>
-    <meta charset="UTF-8">
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<link href="Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Content/css/style.css">
 
-    
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-offset-4">
-                <h1>RobotController</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-offset-5">
-                <button ng-click="direction(1)" class="btn btn-primary btnWidth">Forward</button>
-            </div>
-        </div>
-        <div class="row upPadding">
-            <div class="col-sm-offset-4">
-                <button ng-click="direction(2)" class="btn btn-primary btnWidth">Left</button>
-                <button ng-click="direction(0)" class="btn btn-danger btnWidth">Stop</button>
-                <button ng-click="direction(3)" class="btn btn-primary btnWidth">Right</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-offset-5">
-                <button ng-click="direction(4)" class="btn btn-primary btnWidth">Back</button>
-            </div>
-        </div>
-    </div>
-</body>
+    	<title>Controller</title>
+
+	</head>
+	<body>
+
+		<div ui-view="root"></div>
+
+		<!-- Required scripts -->
+		<script src="Scripts/angular.min.js"></script>
+		<script src="Scripts/angular-route.js"></script>
+		<script src="Scripts/angular-resource.js"></script>
+		<script src="Scripts/angular-ui-router.min.js"></script>
+		<script src="Scripts/angular-sanitize.js"></script>
+		<script src="Scripts/d3.min.js"></script>
+		<script src="Scripts/d3-tip.js"></script>
+		<script src="Scripts/jquery-2.2.3.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_F7bvjyRPrvfGX6Bf81qNC8UANMf2mos"></script>
+		<script src="Scripts/bootstrap/js/bootstrap.min.js"></script>
+        <script src="Scripts/require.js"></script>
+
+		<!-- Source scripts -->
+		<script src="app.js"></script>
+        <script src="modules/main/main-controller.js"></script>
+	
+	</body>
 </html>
