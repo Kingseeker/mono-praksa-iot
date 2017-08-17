@@ -1,11 +1,14 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="roboController">
 <head>
     <title>Controller</title>
     <meta charset="UTF-8">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
+    
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -18,19 +21,19 @@
         </div>
         <div class="row">
             <div class="col-sm-offset-5">
-                <button ng-click="speed=1" class="btn btn-primary btnWidth">Forward</button>
+                <button ng-click="direction(1)" class="btn btn-primary btnWidth">Forward</button>
             </div>
         </div>
         <div class="row upPadding">
             <div class="col-sm-offset-4">
-                <button ng-click="speed=2" class="btn btn-primary btnWidth">Left</button>
-                <button ng-click="speed=0" class="btn btn-danger btnWidth">Stop</button>
-                <button ng-click="speed=3" class="btn btn-primary btnWidth">Right</button>
+                <button ng-click="direction(2)" class="btn btn-primary btnWidth">Left</button>
+                <button ng-click="direction(0)" class="btn btn-danger btnWidth">Stop</button>
+                <button ng-click="direction(3)" class="btn btn-primary btnWidth">Right</button>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-offset-5">
-                <button ng-click="speed=4" class="btn btn-primary btnWidth">Back</button>
+                <button ng-click="direction(4)" class="btn btn-primary btnWidth">Back</button>
             </div>
         </div>
     </div>
