@@ -32,20 +32,24 @@
             this.ForwardButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
-            this.SerialResponseBox = new System.Windows.Forms.TextBox();
             this.LeftButton = new System.Windows.Forms.Button();
             this.RightButton = new System.Windows.Forms.Button();
             this.ConnectButton = new System.Windows.Forms.Button();
             this.DisconnectButon = new System.Windows.Forms.Button();
             this.CommandsGroupBox = new System.Windows.Forms.GroupBox();
+            this.SerialConnectButton = new System.Windows.Forms.Button();
+            this.SerialCommunicationBox = new System.Windows.Forms.ListBox();
             this.PublishButton = new System.Windows.Forms.Button();
             this.ConnectionStatusBox = new System.Windows.Forms.ListBox();
             this.PayloadTextBox = new System.Windows.Forms.TextBox();
+            this.MQTTGroupBox = new System.Windows.Forms.GroupBox();
             this.CommandsGroupBox.SuspendLayout();
+            this.MQTTGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ForwardButton
             // 
+            this.ForwardButton.Enabled = false;
             this.ForwardButton.Location = new System.Drawing.Point(128, 19);
             this.ForwardButton.Name = "ForwardButton";
             this.ForwardButton.Size = new System.Drawing.Size(108, 65);
@@ -56,6 +60,7 @@
             // 
             // BackButton
             // 
+            this.BackButton.Enabled = false;
             this.BackButton.Location = new System.Drawing.Point(128, 158);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(108, 66);
@@ -66,6 +71,7 @@
             // 
             // StopButton
             // 
+            this.StopButton.Enabled = false;
             this.StopButton.Location = new System.Drawing.Point(128, 90);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(108, 62);
@@ -74,15 +80,9 @@
             this.StopButton.UseVisualStyleBackColor = true;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
-            // SerialResponseBox
-            // 
-            this.SerialResponseBox.Location = new System.Drawing.Point(6, 246);
-            this.SerialResponseBox.Name = "SerialResponseBox";
-            this.SerialResponseBox.Size = new System.Drawing.Size(358, 20);
-            this.SerialResponseBox.TabIndex = 3;
-            // 
             // LeftButton
             // 
+            this.LeftButton.Enabled = false;
             this.LeftButton.Location = new System.Drawing.Point(6, 90);
             this.LeftButton.Name = "LeftButton";
             this.LeftButton.Size = new System.Drawing.Size(116, 62);
@@ -93,6 +93,7 @@
             // 
             // RightButton
             // 
+            this.RightButton.Enabled = false;
             this.RightButton.Location = new System.Drawing.Point(242, 90);
             this.RightButton.Name = "RightButton";
             this.RightButton.Size = new System.Drawing.Size(118, 62);
@@ -103,7 +104,7 @@
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(39, 82);
+            this.ConnectButton.Location = new System.Drawing.Point(30, 59);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(75, 23);
             this.ConnectButton.TabIndex = 6;
@@ -113,7 +114,8 @@
             // 
             // DisconnectButon
             // 
-            this.DisconnectButon.Location = new System.Drawing.Point(228, 82);
+            this.DisconnectButon.Enabled = false;
+            this.DisconnectButon.Location = new System.Drawing.Point(242, 59);
             this.DisconnectButon.Name = "DisconnectButon";
             this.DisconnectButon.Size = new System.Drawing.Size(75, 23);
             this.DisconnectButon.TabIndex = 7;
@@ -123,22 +125,43 @@
             // 
             // CommandsGroupBox
             // 
+            this.CommandsGroupBox.Controls.Add(this.SerialConnectButton);
+            this.CommandsGroupBox.Controls.Add(this.SerialCommunicationBox);
             this.CommandsGroupBox.Controls.Add(this.RightButton);
             this.CommandsGroupBox.Controls.Add(this.LeftButton);
             this.CommandsGroupBox.Controls.Add(this.StopButton);
             this.CommandsGroupBox.Controls.Add(this.BackButton);
             this.CommandsGroupBox.Controls.Add(this.ForwardButton);
-            this.CommandsGroupBox.Controls.Add(this.SerialResponseBox);
-            this.CommandsGroupBox.Location = new System.Drawing.Point(366, 21);
+            this.CommandsGroupBox.Location = new System.Drawing.Point(379, 21);
             this.CommandsGroupBox.Name = "CommandsGroupBox";
-            this.CommandsGroupBox.Size = new System.Drawing.Size(370, 272);
+            this.CommandsGroupBox.Size = new System.Drawing.Size(370, 376);
             this.CommandsGroupBox.TabIndex = 8;
             this.CommandsGroupBox.TabStop = false;
             this.CommandsGroupBox.Text = "Commands";
             // 
+            // SerialConnectButton
+            // 
+            this.SerialConnectButton.Location = new System.Drawing.Point(6, 19);
+            this.SerialConnectButton.Name = "SerialConnectButton";
+            this.SerialConnectButton.Size = new System.Drawing.Size(75, 23);
+            this.SerialConnectButton.TabIndex = 7;
+            this.SerialConnectButton.Text = "Connect";
+            this.SerialConnectButton.UseVisualStyleBackColor = true;
+            this.SerialConnectButton.Click += new System.EventHandler(this.SerialConnectButton_Click);
+            // 
+            // SerialCommunicationBox
+            // 
+            this.SerialCommunicationBox.Enabled = false;
+            this.SerialCommunicationBox.FormattingEnabled = true;
+            this.SerialCommunicationBox.Location = new System.Drawing.Point(6, 230);
+            this.SerialCommunicationBox.Name = "SerialCommunicationBox";
+            this.SerialCommunicationBox.Size = new System.Drawing.Size(358, 134);
+            this.SerialCommunicationBox.TabIndex = 6;
+            // 
             // PublishButton
             // 
-            this.PublishButton.Location = new System.Drawing.Point(132, 82);
+            this.PublishButton.Enabled = false;
+            this.PublishButton.Location = new System.Drawing.Point(135, 59);
             this.PublishButton.Name = "PublishButton";
             this.PublishButton.Size = new System.Drawing.Size(75, 23);
             this.PublishButton.TabIndex = 9;
@@ -149,37 +172,46 @@
             // ConnectionStatusBox
             // 
             this.ConnectionStatusBox.FormattingEnabled = true;
-            this.ConnectionStatusBox.Location = new System.Drawing.Point(83, 137);
+            this.ConnectionStatusBox.Location = new System.Drawing.Point(7, 230);
             this.ConnectionStatusBox.Name = "ConnectionStatusBox";
-            this.ConnectionStatusBox.Size = new System.Drawing.Size(168, 121);
+            this.ConnectionStatusBox.Size = new System.Drawing.Size(348, 134);
             this.ConnectionStatusBox.TabIndex = 10;
             // 
             // PayloadTextBox
             // 
-            this.PayloadTextBox.Location = new System.Drawing.Point(39, 40);
+            this.PayloadTextBox.Location = new System.Drawing.Point(30, 19);
             this.PayloadTextBox.Name = "PayloadTextBox";
-            this.PayloadTextBox.Size = new System.Drawing.Size(264, 20);
+            this.PayloadTextBox.Size = new System.Drawing.Size(287, 20);
             this.PayloadTextBox.TabIndex = 11;
+            // 
+            // MQTTGroupBox
+            // 
+            this.MQTTGroupBox.Controls.Add(this.PayloadTextBox);
+            this.MQTTGroupBox.Controls.Add(this.ConnectionStatusBox);
+            this.MQTTGroupBox.Controls.Add(this.ConnectButton);
+            this.MQTTGroupBox.Controls.Add(this.PublishButton);
+            this.MQTTGroupBox.Controls.Add(this.DisconnectButon);
+            this.MQTTGroupBox.Location = new System.Drawing.Point(12, 21);
+            this.MQTTGroupBox.Name = "MQTTGroupBox";
+            this.MQTTGroupBox.Size = new System.Drawing.Size(361, 376);
+            this.MQTTGroupBox.TabIndex = 12;
+            this.MQTTGroupBox.TabStop = false;
+            this.MQTTGroupBox.Text = "MQTT";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 353);
-            this.Controls.Add(this.PayloadTextBox);
-            this.Controls.Add(this.ConnectionStatusBox);
-            this.Controls.Add(this.PublishButton);
+            this.ClientSize = new System.Drawing.Size(761, 404);
+            this.Controls.Add(this.MQTTGroupBox);
             this.Controls.Add(this.CommandsGroupBox);
-            this.Controls.Add(this.DisconnectButon);
-            this.Controls.Add(this.ConnectButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "RobotControllerXtreme";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.CommandsGroupBox.ResumeLayout(false);
-            this.CommandsGroupBox.PerformLayout();
+            this.MQTTGroupBox.ResumeLayout(false);
+            this.MQTTGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,7 +220,6 @@
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button StopButton;
-        private System.Windows.Forms.TextBox SerialResponseBox;
         private System.Windows.Forms.Button LeftButton;
         private System.Windows.Forms.Button RightButton;
         private System.Windows.Forms.Button ConnectButton;
@@ -197,6 +228,9 @@
         private System.Windows.Forms.Button PublishButton;
         private System.Windows.Forms.ListBox ConnectionStatusBox;
         private System.Windows.Forms.TextBox PayloadTextBox;
+        private System.Windows.Forms.ListBox SerialCommunicationBox;
+        private System.Windows.Forms.GroupBox MQTTGroupBox;
+        private System.Windows.Forms.Button SerialConnectButton;
     }
 }
 
