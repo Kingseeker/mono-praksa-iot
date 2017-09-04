@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-offset-2 col-sm-offset-4">
+            <h1>RobotController</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-2 col-sm-offset-4">
+            <table>
+                <tr>
+                    <td></td>
+                    <td><button (click)="direction(1)" class="btn btn-primary btnWidth">Forward</button></td> 
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><button (click)="direction(3)" class="btn btn-primary btnWidth">Left</button></td>
+                    <td><button (click)="direction(0)" class="btn btn-danger btnWidth">Stop</button></td> 
+                    <td><button (click)="direction(4)" class="btn btn-primary btnWidth">Right</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button (click)="direction(2)" class="btn btn-primary btnWidth">Back</button></td> 
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-8">
+            <button (click)="direction(5)" class="btn btn-success btnWidth">Get data</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-3">
+            <agm-map [latitude]="coords[0][0]" [longitude]="coords[0][1]" [zoom]="zoom">
+                <div *ngIf="varijabla">
+                    <agm-marker *ngFor="let coord of coords" [latitude]="coord[0]" [longitude]="coord[1]"></agm-marker>
+                </div>
+            </agm-map>
+        </div>
+    </div>
+</div>

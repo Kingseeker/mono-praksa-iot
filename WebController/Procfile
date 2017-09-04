@@ -1,0 +1,1 @@
+web: node config/webpack.dev.js

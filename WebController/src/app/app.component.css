@@ -1,0 +1,17 @@
+.btnWidth{
+    width: 80px;
+}
+.upPadding{
+    padding: 10px 0 10px 22px;
+}
+.btns{
+    background-color: lightblue;
+}
+agm-map {
+    padding: 20px;
+    height: 400px;
+    width: 400px;
+}
+td{
+    padding: 5px;
+}
